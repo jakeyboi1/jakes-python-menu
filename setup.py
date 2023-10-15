@@ -10,7 +10,7 @@ classifiers = [
 
 setup(
     name="jakes-python-menu",
-    version="1.0.2",
+    version="1.0.3",
     description="A Python menu library",
     long_description=open("README.txt").read() + '\n\n' + open("CHANGELOG.txt").read(),
     url='',

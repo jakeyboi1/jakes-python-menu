@@ -33,5 +33,3 @@ def createMenu(title, options):
             return options[selectedOption]
         
         time.sleep(.2)
-
-createMenu("test", ["t", 't2', 't3'])
