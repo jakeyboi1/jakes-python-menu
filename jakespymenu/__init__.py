@@ -17,16 +17,21 @@ def updateMenu(title, options, selectedOption):
 
 def createMenu(title, options):
     updateMenu(title, options, 0)
+    optionsLen = len(options)
     selectedOption = 0
     while True:
         key = keyboard.read_key()
         if key == "down":
-            selectedOption += 1
-            updateMenu(title, options, selectedOption)
+            if selectedOption != optionsLen - 1: #-1 has to be done here as selected option is not increasing until after if so would still trigger even on last option
+                selectedOption += 1
+                updateMenu(title, options, selectedOption)
         elif key == "up":
-            selectedOption -= 1
-            updateMenu(title, options, selectedOption)
+            if selectedOption > 0:
+                selectedOption -= 1
+                updateMenu(title, options, selectedOption)
         elif key == "enter":
             return options[selectedOption]
         
         time.sleep(.2)
+
+createMenu("test", ["t", 't2', 't3'])
