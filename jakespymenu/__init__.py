@@ -19,6 +19,7 @@ def createMenu(title, options):
     updateMenu(title, options, 0)
     optionsLen = len(options)
     selectedOption = 0
+    optionSelected = False
     while True:
         key = keyboard.read_key()
         if key == "down":
@@ -30,6 +31,9 @@ def createMenu(title, options):
                 selectedOption -= 1
                 updateMenu(title, options, selectedOption)
         elif key == "enter":
-            return options[selectedOption]
-        
+            optionSelected = True
+
         time.sleep(.2)
+        if optionSelected:
+            os.system('cls')
+            return options[selectedOption]
